@@ -16,7 +16,7 @@ const Login = () => {
     });
     if (!error) {
       console.log("success");
-      navigate("/jobs");
+      navigate("/");
     }
   };
 

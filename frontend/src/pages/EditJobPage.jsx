@@ -5,7 +5,7 @@ const EditJobPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // State cho form
+
   const [form, setForm] = useState({
     title: "",
     type: "Full-Time",
@@ -17,7 +17,7 @@ const EditJobPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // Fetch job data khi mount
+
   useEffect(() => {
     const fetchJob = async () => {
       try {
@@ -42,7 +42,7 @@ const EditJobPage = () => {
     fetchJob();
   }, [id]);
 
-  // Xử lý thay đổi input
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
