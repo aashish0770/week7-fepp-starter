@@ -5,7 +5,7 @@ const jobRouter = require("./routes/jobRouter");
 const { unknownEndpoint,errorHandler } = require("./middleware/customMiddleware");
 const connectDB = require("./config/db");
 const cors = require("cors");
-
+const productsRouter= require("./routes/productsRouter");
 // Middlewares
 app.use(cors())
 app.use(express.json());
@@ -14,7 +14,7 @@ connectDB();
 
 // Use the jobRouter for all "/jobs" routes
 app.use("/api/jobs", jobRouter);
-
+app.use("/api/products", productsRouter);
 app.use(unknownEndpoint);
 app.use(errorHandler);
 
